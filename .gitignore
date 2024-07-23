@@ -1,0 +1,7 @@
+*/node_modules/
+*/prisma/
+*/.env
+*/.yarn/
+*/.nuxt/
+*/yarn.lock
+*/package-lock.json
