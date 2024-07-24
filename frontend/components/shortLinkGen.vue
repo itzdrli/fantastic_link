@@ -28,10 +28,15 @@ export default {
           this.error = '请输入长链接';
           throw new Error('请输入长链接');
         }
-        if (!this.longUrl.startsWith('http')) {
+        // validat url with regex
+        if (!this.longUrl.match(/^(http|https|ftp):\/\/[^\s/$.?#]+\.[^\s/$.?#]+[^\s]*$/)) {
           this.error = '请输入正确的链接';
           throw new Error('请输入正确的链接');
         }
+        // if (!this.longUrl.startsWith('http')) {
+        //   this.error = '请输入正确的链接';
+        //   throw new Error('请输入正确的链接');
+        // }
         const response = await fetch('https://l-i.biz/shorten', {
           method: 'POST',
           headers: {

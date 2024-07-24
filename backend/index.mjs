@@ -16,7 +16,9 @@ app.use(express.json());
 app.post('/shorten', async (req, res) => {
   const oUrl = req.body.url;
   if (!oUrl) return res.status(400).json({ error: 'Please provide a URL' });
-  if (!oUrl.startsWith('http')) return res.status(400).json({ error: 'Please provide a valid URL (including http:// or https://)' });
+  if (!oUrl.match(/^(http|https|ftp):\/\/[^\s/$.?#]+\.[^\s/$.?#]+[^\s]*$/)) 
+    return res.status(400).json({ error: 'Please provide a valid URL (including http:// or https://)' });
+  // if (!oUrl.startsWith('http')) return res.status(400).json({ error: 'Please provide a valid URL (including http:// or https://)' });
 
   try {
     const existingUrl = await prisma.url.findFirst({
