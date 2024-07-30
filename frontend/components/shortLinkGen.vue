@@ -1,8 +1,8 @@
 <template>
   <div class="short-link-generator center-absolute">
-    <h1 class="text-nord5 mt-10 text-3xl">Fantastic Link</h1>
+    <h1 class="text-nord5 mt-10 text-3xl">Fantaaaaaaastic Liiiiiiink</h1>
     <input v-model="longUrl" placeholder="Original Link" class="bg-nord4 rounded-xl placeholder-subtext1 text-text mr-3 mt-5 w-300px p-3"/>
-    <button @click="generateShortLink" class="bg-nord4 rounded-3xl text-nord5 p-3 hover:bg-nord3"> Generate! </button>
+    <button @click="generateShortLink" class="bg-nord4 rounded-3xl text-nord5 p-3 hover:bg-nord3"> Geneeeeerate! </button>
     <div v-if="shortUrl" class="text-text mt-5">
       Shoten Link: 
       <a :href="shortUrl" target="_blank" class="text-text hover:underline">{{ shortUrl }}</a>
