@@ -11,7 +11,9 @@
 
     <footer class="mt-10 text-center text-text">
       <a href="https://github.com/itzdrli/fantastic_link" target="_blank" class="text-text hover:underline">Github</a>  |  
-      <a href="mailto:admin@itzdrli.com" class="text-text hover:underline">Contact</a>
+      <a href="mailto:admin@itzdrli.com" class="text-text hover:underline">Contact</a>  |  
+      <a href="https://ko-fi.com/itzdrli" class="text-text hover:underline">Donate</a>  |  
+      <a href="https://afdian.com/a/itzdrli" target="_blank" class="text-text hover:underline">爱发电</a>
     </footer>
   
   </div>
