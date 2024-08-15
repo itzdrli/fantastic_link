@@ -19,7 +19,9 @@ app.post('/shorten', async (req, res) => {
   if (!oUrl.match(/^(http|https|ftp):\/\/[^\s/$.?#]+\.[^\s/$.?#]+[^\s]*$/)) 
     return res.status(400).json({ error: 'Please provide a valid URL (including http:// or https://)' });
   // if (!oUrl.startsWith('http')) return res.status(400).json({ error: 'Please provide a valid URL (including http:// or https://)' });
-
+  // check if url ends with '/', if not add it
+  if (!oUrl.endsWith('/')) oUrl += '/';
+  
   try {
     const existingUrl = await prisma.url.findFirst({
       where: { longUrl: oUrl },
