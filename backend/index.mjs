@@ -10,16 +10,20 @@ const prisma = new PrismaClient();
 const app = express();
 const PORT = process.env.PORT;
 
-app.use(cors());
 app.use(express.json());
 
+const corsOptions = {
+  origin: 'https://hi.l-i.biz',
+  method: ['POST', 'GET'],
+  allowedHeaders: ['Content-Type'],
+}
+app.use(cors(corsOptions));
+
 app.post('/shorten', async (req, res) => {
-  const oUrl = req.body.url;
+  let oUrl = req.body.url;
   if (!oUrl) return res.status(400).json({ error: 'Please provide a URL' });
   if (!oUrl.match(/^(http|https|ftp):\/\/[^\s/$.?#]+\.[^\s/$.?#]+[^\s]*$/)) 
     return res.status(400).json({ error: 'Please provide a valid URL (including http:// or https://)' });
-  // if (!oUrl.startsWith('http')) return res.status(400).json({ error: 'Please provide a valid URL (including http:// or https://)' });
-  // check if url ends with '/', if not add it
   if (!oUrl.endsWith('/')) oUrl += '/';
   
   try {
@@ -45,6 +49,7 @@ app.post('/shorten', async (req, res) => {
     await prisma.url.create({
       data: {
         shortId: shortId,
+        createdAt: new Date(),
         longUrl: oUrl,
       },
     });
