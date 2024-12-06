@@ -1,19 +1,20 @@
 <template>
   <div class="short-link-generator center-absolute">
-    <h1 class="text-nord5 mt-10 text-3xl">Fantaaaaaaastic Liiiiiiink</h1>
-    <input v-model="longUrl" placeholder="Original Link" class="bg-nord4 rounded-xl placeholder-subtext1 text-text mr-3 mt-5 w-300px p-3"/>
-    <button @click="generateShortLink" class="bg-nord4 rounded-3xl text-nord5 p-3 hover:bg-nord3"> Geneeeeerate! </button>
+    <h1 class="text-nord5 mt-10 text-3xl">Fantastic Link</h1>
+    <input v-model="longUrl" placeholder="Loooong Link" class="bg-nord4 rounded-xl placeholder-subtext1 text-text mr-3 mt-5 w-300px p-3"/>
+    <button @click="generateShortLink" class="bg-nord4 rounded-3xl text-nord5 p-3 hover:bg-nord3"> Shoten! </button>
     <div v-if="shortUrl" class="text-text mt-5">
-      Shoten Link: 
+      Shorten Link: 
       <a :href="shortUrl" target="_blank" class="text-text hover:underline">{{ shortUrl }}</a>
     </div>
     <p v-if="error" class="error mt-5 text-red">{{ error }}</p>
 
     <footer class="mt-10 text-center text-text">
       <a href="https://github.com/itzdrli/fantastic_link" target="_blank" class="text-text hover:underline">Github</a>  |  
-      <a href="mailto:admin@itzdrli.com" class="text-text hover:underline">Contact</a>  |  
+      <a href="mailto:itzdrli@proton.me" class="text-text hover:underline">Contact</a>  |  
+      <a href="https://legal.itzdrli.cc/" class="text-text hover:underline">Privacy Policy</a>  |
       <a href="https://ko-fi.com/itzdrli" class="text-text hover:underline">Donate</a>  |  
-      <a href="https://afdian.com/a/itzdrli" target="_blank" class="text-text hover:underline">爱发电</a>
+      <a href="https://afdian.com/a/itzdrli" target="_blank" class="text-text hover:underline">AFDian</a>
     </footer>
   
   </div>
