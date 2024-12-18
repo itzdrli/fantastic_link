@@ -4,5 +4,5 @@
 
 html,
 body {
-  @apply bg-nord1; /* 使用自定义的颜色 */
+  @apply bg-bg; /* 使用自定义的颜色 */
 }

@@ -11,18 +11,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        nord1: "#2e3440",
-        nord2: "#3b4252",
-        nord3: "#434c5e",
-        nord4: "#4c566a",
-        nord5: "#d8dee9",
+        text: "#CBDCED",
+        bg: "#323D42",
+        flow: "#686879",
+        red: "#C56869",
+        flow1: "#3F778C",
       }
     },
   },
-  plugins: [
-    require("@catppuccin/tailwindcss")({
-      defaultFlavour: "frappe",
-    }),
-  ],
+  plugins: [],
 }
 
